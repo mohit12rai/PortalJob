@@ -1,10 +1,12 @@
 {
   "name": "jobseekr",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server/server.js",
+    "dev": "nodemon server/server.js",
+    "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.13.0"
+    "mongoose": "^8.13.0",
+    "path": "^0.12.7"
   }
 }
