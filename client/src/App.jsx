@@ -10,6 +10,7 @@ import AllRecruiterFind from './component/AllRecruiterFind';
 import Jobs from './component/Jobs';
 import AllAppliedJob from './component/AllAppliedJob';
 import ProviderPostJob from './component/ProviderPostJob';
+import TotalJibs from './component/TotalJibs';
 
 
 const App = () => {
@@ -28,6 +29,9 @@ const App = () => {
           <Route path="/alljobs" element={<Jobs/>} />
           <Route path="/allappliedjob" element={<AllAppliedJob/>} />
           <Route path="/job-list/:recruiterId" element={<ProviderPostJob/>} />
+          {/* <Route path="/totaljob" element={<TotalJibs/>} /> */}
+
+
 
 
 

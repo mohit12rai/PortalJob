@@ -4,7 +4,7 @@ const applicationSchema = new mongoose.Schema(
     {
         candidateId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: "UserModel", // ✅ Ensure correct reference (model name should match)
+            ref: "LoginModel", // ✅ Ensure correct reference (model name should match)
             required: true
         },
         jobId: {

@@ -13,7 +13,7 @@ export default function JobConnector() {
       className="bg-white text-black font-semibold px-6 py-2 rounded-lg shadow-md mb-6"
       onClick={() => setShowOptions(!showOptions)}
     >
-      JOB Connector
+      JOB Connectors
     </button>
 
     {/* Job Seeker & Job Provider Buttons */}
