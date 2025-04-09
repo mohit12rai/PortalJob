@@ -113,3 +113,60 @@ export const logOut = async(req,res)=>{
   }
 
 }
+
+export const updateProfile = async(req,res)=>{
+  const { name, email,phoneNumber, bio ,skills} = req.body;
+  const file = req.file;
+
+  try {
+    if(!name || !email|| !phoneNumber || !bio || !skills ){
+      return res.status(400).json({
+         message: "Somthing is missing" ,
+         success:false
+        });
+    }
+
+    const skillsArray = skills.split(",");
+    const userId = req.id;
+    let user = await LoginModel.findById(userId);
+
+    
+    if (!user){ 
+      return res.status(400).json({ 
+        message: "User not found",
+        success:false
+      });
+
+    }
+
+    user.name = name,
+    user.email = email,
+    user.phoneNumber=phoneNumber,
+    user.profile.bio= bio,
+    user.profile.skills = skillsArray
+
+    await user.save();
+
+    user={
+      _id:user._id,
+      name:user.name,
+      email:user.email,
+      phoneNumber:user.phoneNumber,
+      role:user.role,
+      profile:user.profile,
+
+    }
+
+    return req.status(200).json({
+      message: "profile updated successfully",
+      user,
+      success:true
+      
+    })
+    
+  } catch (error) {
+    console.log(error)
+
+    
+  }
+}
