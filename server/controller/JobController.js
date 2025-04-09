@@ -1,5 +1,5 @@
 import JobModel from "../model/JobModel.js";
-import RecruiterModel from "../model/recruiterModel.js";
+import Company from "../model/companyModel.js";
 
 // import { useParams } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ export const createJob = async (req, res) => {
         }
 
         // Check if recruiter exists
-        const recruiter = await RecruiterModel.findById(recruiterId);
+        const recruiter = await Company.findById(recruiterId);
         if (!recruiter) {
             return res.status(404).json({ success: false, message: "Recruiter not found" });
         }
